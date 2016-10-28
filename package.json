@@ -1,0 +1,25 @@
+{
+  "name": "module-2-individual-homework-yumensiye",
+  "version": "1.0.0",
+  "description": "__Submitted by:__ username@umn.edu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umn-5117-f16/module-2-individual-homework-yumensiye.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umn-5117-f16/module-2-individual-homework-yumensiye/issues"
+  },
+  "homepage": "https://github.com/umn-5117-f16/module-2-individual-homework-yumensiye#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.10",
+    "socket.io": "^1.5.0"
+  }
+}
