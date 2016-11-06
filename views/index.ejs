@@ -61,67 +61,66 @@
   <div class="col-md-3">
   </div>
   <div class="col-md-6">
-    <div class="row">
-      <div class="col-md-1">
-        <img class="head-portrait" src="https://pbs.twimg.com/profile_images/658688193651277824/Kv_cNNub_bigger.png" alt="">
-      </div>
-      <div class="col-md-5">
-        <div class="col-md-12 bold-text">
-          <strong>ABC News</strong><img class="verified-icon" src="/imgs/verified.png" />
+    <% data.forEach(function(ele){ %>
+      <div class="row">
+        <div class="row">
+          <div class="col-md-1">
+            <img class="head-portrait" src="<%= ele.avatar %>" alt="">
+          </div>
+          <div class="col-md-5">
+            <div class="col-md-12 bold-text">
+              <strong><%= ele.full_name %></strong><img class="verified-icon" src="/imgs/verified.png" />
+            </div>
+            <div class="col-md-12 gray-text">
+              <%= ele.username %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pull-right">
+              <button type="button pull-right" class="btn btn-default"><strong>Follow</strong></button>
+            </div>
+          </div>
         </div>
-        <div class="col-md-12 gray-text">
-          @ABC
+        <div class="row">
+          <div class="col-md-12">
+            <p class="main-text">
+              <%= ele.tweet_text %>
+              <a href="http://<%= ele.tweet_link %>"><%= ele.tweet_link %></a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <span class="small-gray-text">RETWEETS</span>
+            <span class="number"><%= ele.retweets %></span>
+          </div>
+          <div class="col-md-2">
+            <div class="col-md-12">
+              <span class="small-gray-text">LIKES</span>
+              <span class="number"><%= ele.likes %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="tweet-date"><%= ele.date %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <img class="bottom-icon" src="/imgs/reply.png" />
+          </div>
+          <div class="col-md-2">
+            <img class="bottom-icon" src="/imgs/retweet.png" />
+            <span class="bottom-text"><%= ele.retweets %></span>
+          </div>
+          <div class="col-md-2">
+            <img class="bottom-icon" src="/imgs/retweet.png" />
+            <span class="bottom-text"><%= ele.likes %></span>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="pull-right">
-          <button type="button pull-right" class="btn btn-default"><strong>Follow</strong></button>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <p class="main-text">
-          Dwayne “The Rock “Johnson shares adorable videos of his lazy French bulldog puppies:
-          <a href="http://abcn.ws/1LKOemd">abcn.ws/1LKOemd</a>
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <img src="https://pbs.twimg.com/media/CQBPd91UcAEFNMr.jpg" class="img-responsive img-rounded"/>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <span class="small-gray-text">RETWEETS</span>
-        <span class="number">71</span>
-      </div>
-      <div class="col-md-2">
-        <div class="col-md-12">
-          <span class="small-gray-text">LIKES</span>
-          <span class="number">248</span>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <p class="tweet-date">3:40 PM - 28 Sep 2015</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <img class="bottom-icon" src="/imgs/reply.png" />
-      </div>
-      <div class="col-md-2">
-        <img class="bottom-icon" src="/imgs/retweet.png" />
-        <span class="bottom-text">71</span>
-      </div>
-      <div class="col-md-2">
-        <img class="bottom-icon" src="/imgs/retweet.png" />
-        <span class="bottom-text">248</span>
-      </div>
-    </div>
+    <% }) %>
   </div>
   <div class="col-md-3">
   </div>
