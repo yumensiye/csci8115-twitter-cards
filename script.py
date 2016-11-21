@@ -44,6 +44,7 @@ for idx, url in enumerate(urls):
     response = opener.open(url)
     raw_data = pq(response.read())
     dic = {}
+    dic['id'] = idx
     dic['avatar'] = raw_data('.permalink-header .avatar').attr('src')
     raw_full_name = raw_data('.permalink-header strong').text()
     dic['full_name'] = raw_full_name[:raw_full_name.find('Verified account')]
