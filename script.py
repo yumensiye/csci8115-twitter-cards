@@ -25,7 +25,7 @@ urls = [
     'https://twitter.com/CBSNews/status/791610410545848320',
     'https://twitter.com/WSJ/status/791587769256738816',
     'https://twitter.com/StephenAtHome/status/790914278060535808',
-    'https://twitter.com/KimKardashian/status/782694393216110592',
+    'https://twitter.com/CNN/status/791621727897980928',
     'https://twitter.com/chuck_facts/status/790281734969561089',
     'https://twitter.com/riledup2013/status/737472921476714496',
     'https://twitter.com/ABC/status/648628271014285312',
