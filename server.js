@@ -21,6 +21,42 @@ app.get('/favor', function(req, res) {
   res.render('favor', {'data': arr});
 });
 
+app.get('/likestatus', function(req, res) {
+  res.render('likestatus', {'data': arr});
+});
+
+app.get('/allstatus', function(req, res) {
+  MongoClient.connect(mongoURI,function(err,db){
+    if (err)
+      console.log('connect error');
+    else {
+      db.authenticate(dbUser, dbPassword, function(err,result){
+        if(err)
+          throw err;
+        else {
+          var results = {};
+          db.collection(favorColl).find().toArray(function(err, favors) {
+            db.collection(likeColl).find().toArray(function(err, likes) {
+              for (i=0; i < favors.length; i++) {
+                results[i] = {'star': 0, 'heart': 0};
+              }
+              for (i=0; i < favors.length; i++) {
+                results[favors[i].id].star = favors[i].count;
+                results[likes[i].id].heart = likes[i].count;
+              }
+              var arr = Object.keys(results).map(function (key) {
+                return results[key];
+              });
+              res.render('allstatus', {'data': arr});
+            });
+          });
+        }
+      });
+    }
+  })
+});
+
+
 var port = process.env.PORT || 3000; // For when we deploy to Heroku
 var server = app.listen(port);
 
