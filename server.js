@@ -6,7 +6,9 @@ var dbPassword = "panjintian";
 var likeColl = "like";
 var favorColl = "favor";
 var data = require('./data.json');
+var olddata = require('./olddata.json');
 var arr = Object.keys(data).map(function(key) { return data[key]; });
+var arr2 = Object.keys(olddata).map(function(key) { return olddata[key]; });
 
 app = express();
 
@@ -23,6 +25,10 @@ app.get('/favor', function(req, res) {
 
 app.get('/likestatus', function(req, res) {
   res.render('likestatus', {'data': arr});
+});
+
+app.get('/oldtweets', function(req, res) {
+  res.render('oldtweets', {'data': arr2});
 });
 
 app.get('/allstatus', function(req, res) {
